@@ -8,6 +8,7 @@ import { errorHandler } from './controllers/error-handler';
 import { coreAuthRouter } from './routes/auth';
 import { userRouter } from './routes/user';
 import { productRouter } from './routes/product';
+import { cartRouter } from './routes/cart';
 
 const app = express();
 
@@ -42,6 +43,7 @@ app.use(cookieParser());
 app.use('/api', coreAuthRouter);
 app.use('/api', userRouter);
 app.use("/api", productRouter);
+app.use("/api", cartRouter);
 
 app.use(errorHandler);
 
