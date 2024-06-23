@@ -6,7 +6,8 @@ import { CartModel } from "../../db/models/cart";
 
 
 export const UpdateCartInputSchema = z.object({
-    cartId: z.string(),
+    userId: z.string(),
+    productId: z.string(),
     quantity: z.number()
 });
 
@@ -25,14 +26,26 @@ export const updateCartItem = async (req: Request, res: Response, next: NextFunc
         }
 
 
-        const { cartId, quantity } = validatedData.data;
+        const { userId, productId, quantity } = validatedData.data;
 
+        if (quantity === 0) {
 
-        await CartModel.updateOne({
-            _id: cartId
-        }, {
-            quantity
-        });
+            await CartModel.deleteOne({
+                userId,
+                productId
+            });
+
+        } else {
+
+            await CartModel.updateOne({
+                userId,
+                productId
+            }, {
+                quantity
+            });
+
+        }
+
 
         res.json({ msg: 'cart item updated successfully' });
 
