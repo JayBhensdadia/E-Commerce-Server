@@ -10,9 +10,11 @@
 
 ## Steps to run
 
+rename ```.env.example``` to ```.env```
+
 
 ```shell
-npm install
+npm install 
 ```
 
 ```shell
