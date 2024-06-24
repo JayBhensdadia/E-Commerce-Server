@@ -6,6 +6,8 @@ interface AuthTokenPayload extends JwtPayload {
     email: string;
 }
 
+
+//auth middleware that authenticates incomming requests
 export const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
 
     try {

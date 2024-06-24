@@ -3,6 +3,9 @@ import { Request, Response } from "express";
 import { UserModel } from "../../db/models/user";
 import { getDetailsService } from "../../services/user/get-details";
 
+
+
+//get the users details
 export const getMyDetails = async (req: Request, res: Response) => {
     try {
 

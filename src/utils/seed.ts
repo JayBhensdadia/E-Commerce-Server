@@ -2,6 +2,9 @@ import { ProductModel } from "../db/models/product";
 import { UserModel } from "../db/models/user";
 import { products } from "./constant";
 
+
+
+//script to insert some sample data into database in developement environment
 export const seedTheDataBase = async () => {
     for (let i = 0; i < 20; i++) {
         const user = new UserModel({

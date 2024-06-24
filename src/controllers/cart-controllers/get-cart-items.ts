@@ -3,6 +3,9 @@ import { CartModel } from "../../db/models/cart";
 import { UserModel } from "../../db/models/user";
 import { UserDoesNotExist } from "../../errors";
 
+
+
+//get all cart items of user
 export const getCartItems = async (req: Request, res: Response, next: NextFunction) => {
     try {
 

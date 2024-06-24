@@ -2,6 +2,10 @@ import { NextFunction, Request, Response } from "express";
 import { UserModel } from "../../db/models/user";
 import { CartModel } from "../../db/models/cart";
 
+
+
+//sync the local cart of user (one created before user login)
+//with the database
 export const syncCartItems = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const email = res.locals.email;

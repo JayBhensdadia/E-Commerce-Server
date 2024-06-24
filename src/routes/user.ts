@@ -5,15 +5,14 @@ import { updateDetails } from "../controllers/user-controllers/update-details";
 
 
 
-
+//user router
 const router = Router();
 
 
 
-// get my details
+//user routes
 router.get("/user/me", authMiddleware, getMyDetails);
 
-//update my details
 router.put("/user/update", authMiddleware, updateDetails);
 
 

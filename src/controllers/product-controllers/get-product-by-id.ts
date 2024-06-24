@@ -1,6 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import { ProductModel } from "../../db/models/product";
 
+
+//fetch product with particular id
 export const getProductById = async (req: Request, res: Response, next: NextFunction) => {
     try {
 

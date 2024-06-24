@@ -11,6 +11,9 @@ export const UpdateCartInputSchema = z.object({
     quantity: z.number()
 });
 
+
+//update the cart item
+//which => whose userId and productId are same as provided
 export const updateCartItem = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
@@ -26,8 +29,11 @@ export const updateCartItem = async (req: Request, res: Response, next: NextFunc
         }
 
 
+        //if valid input
         const { userId, productId, quantity } = validatedData.data;
 
+
+        //if quantity is zero delete the product
         if (quantity === 0) {
 
             await CartModel.deleteOne({

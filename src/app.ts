@@ -10,8 +10,13 @@ import { userRouter } from './routes/user';
 import { productRouter } from './routes/product';
 import { cartRouter } from './routes/cart';
 
+
+//create express app
 const app = express();
 
+
+//configure cors policy
+//dev congigurations ↓ (not suitable for production ⚠️ !!!!!)
 app.use(cors({
     origin: true,
     credentials: true
@@ -19,35 +24,30 @@ app.use(cors({
 
 
 
-
-// app.get("/", async (req: Request, res: Response) => {
-//     for (let i = 0; i < 20; i++) {
-//         const product = new ProductModel({
-//             name: `product ${i}`,
-//             description: `description ${i}`,
-//             price: (i + 1) * 1001,
-//             image: `image ${i}`
-//         });
-
-//         await product.save();
-//     }
-
-//     res.json({ msg: '20 sample producst inserted!!!' });
-// });
-
-
+//middleware to extract json data in request bodies
 app.use(json());
+
+//middleware to extract encoded form data
 app.use(urlencoded());
+
+//middleware to parse cookies
 app.use(cookieParser());
 
+
+
+//handle requests using appropriate routers
 app.use('/api', coreAuthRouter);
 app.use('/api', userRouter);
 app.use("/api", productRouter);
 app.use("/api", cartRouter);
 
+
+
+//global catch
+//global error handler
 app.use(errorHandler);
 
-
+//export express app configurations
 export {
     app
 };

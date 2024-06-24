@@ -39,7 +39,7 @@ export const createCartItem = async (req: Request, res: Response, next: NextFunc
 
 
 
-
+        //if not then create new cartItem
         if (!oldCartItem) {
 
             const cartItem = new CartModel({
@@ -52,7 +52,7 @@ export const createCartItem = async (req: Request, res: Response, next: NextFunc
             await cartItem.save();
 
         } else {
-
+            //else update the old cart item
 
             await CartModel.updateOne({
                 _id: oldCartItem._id

@@ -7,6 +7,9 @@ interface UpdateDetailsData {
     phoneNumber?: string,
     profilePicture?: string;
 }
+
+
+//updates the user details
 export const updateDetailsService = async (email: string, data: UpdateDetailsData) => {
 
     await UserModel.updateOne({

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
+//cart schema
 const cartSchema = new Schema({
 
     userId: {

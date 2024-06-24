@@ -1,5 +1,5 @@
 
-
+//custom error class
 export class CustomError extends Error {
     public readonly name: string;
     public readonly statusCode: number;

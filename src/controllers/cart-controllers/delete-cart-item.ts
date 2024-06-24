@@ -1,6 +1,10 @@
 import { NextFunction, Request, Response } from "express";
 import { CartModel } from "../../db/models/cart";
 
+
+
+//delete the cart item 
+//which item => whose userId and productId are same as provided
 export const deleteCartItem = async (req: Request, res: Response, next: NextFunction) => {
     try {
 

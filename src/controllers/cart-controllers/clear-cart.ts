@@ -3,6 +3,8 @@ import { UserModel } from "../../db/models/user";
 import { CartModel } from "../../db/models/cart";
 import { UserDoesNotExist } from "../../errors";
 
+
+//clears the cart of user
 export const clearMyCart = async (req: Request, res: Response) => {
     try {
 

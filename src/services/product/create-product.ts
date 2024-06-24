@@ -5,7 +5,7 @@ import { ProductModel } from '../../db/models/product';
 
 type CreateProductData = z.infer<typeof CreateProductSchema>;
 
-
+//creates a new product
 export const createProductService = async (data: CreateProductData) => {
 
 

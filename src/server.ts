@@ -4,13 +4,18 @@ import { app } from './app';
 import { connectToDatabase } from './db/database';
 import { seedTheDataBase } from './utils/seed';
 
+
+//load environment configurations
 const envConfig = dotenv.config();
 
+
+//load port from env
 const PORT = process.env.PORT ?? 8081;
 
 
 
-
+//starting configurations of server
+//e.g. do not start if database is down
 const startServer = async () => {
     try {
 
@@ -36,4 +41,6 @@ const startServer = async () => {
 
 };
 
+
+//start the server
 startServer();

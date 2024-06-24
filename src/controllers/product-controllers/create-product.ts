@@ -13,7 +13,7 @@ export const CreateProductSchema = z.object({
 });
 
 
-
+//create product controller
 export const createProduct = async (req: Request, res: Response, next: NextFunction) => {
     try {
 
@@ -30,6 +30,7 @@ export const createProduct = async (req: Request, res: Response, next: NextFunct
 
         const data = validatedData.data;
 
+        //call create product service
         await createProductService(data);
 
         res.status(200).json({ msg: 'Product created successfully' });

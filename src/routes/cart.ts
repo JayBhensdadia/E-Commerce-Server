@@ -7,11 +7,13 @@ import { syncCartItems } from "../controllers/cart-controllers/sync-cart-items";
 import { deleteCartItem } from "../controllers/cart-controllers/delete-cart-item";
 import { clearMyCart } from "../controllers/cart-controllers/clear-cart";
 
+
+//cart router
 const router = Router();
 
 
 
-//temporary route to add products
+//cart routes
 router.post("/cart", authMiddleware, createCartItem);
 router.get("/cart", authMiddleware, getCartItems);
 router.put("/cart", authMiddleware, updateCartItem);

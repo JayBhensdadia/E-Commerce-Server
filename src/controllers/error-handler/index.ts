@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { CustomError } from "../../errors/CustomError";
 
 
-
+//global error handler
 export const errorHandler = (err: Error | CustomError, req: Request, res: Response, next: NextFunction) => {
 
     // Custom error handling for known types
