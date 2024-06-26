@@ -32,7 +32,7 @@ export const createNewOrder = async (req: Request, res: Response, next: NextFunc
                 productId: item.productId,
                 quantity: item.quantity
             });
-            return newOrderItem;
+            return newOrderItem.save();
         });
 
 

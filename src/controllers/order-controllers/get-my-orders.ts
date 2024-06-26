@@ -15,7 +15,7 @@ export const getMyOrders = async (req: Request, res: Response, next: NextFunctio
             throw new UserDoesNotExist('user not found!');
         }
 
-        const orders = await OrderDetailsModel.findOne({
+        const orders = await OrderDetailsModel.find({
             userId: user._id
         });
 
