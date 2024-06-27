@@ -9,6 +9,7 @@ import { coreAuthRouter } from './routes/auth';
 import { userRouter } from './routes/user';
 import { productRouter } from './routes/product';
 import { cartRouter } from './routes/cart';
+import { orderRouter } from './routes/order';
 
 
 //create express app
@@ -40,6 +41,7 @@ app.use('/api', coreAuthRouter);
 app.use('/api', userRouter);
 app.use("/api", productRouter);
 app.use("/api", cartRouter);
+app.use("/api", orderRouter);
 
 
 

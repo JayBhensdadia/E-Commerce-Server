@@ -2,14 +2,11 @@ import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
 
-
-//cart schema
-export const cartSchema = new Schema({
-
-    userId: {
+const orderItemSchema = new Schema({
+    orderId: {
         type: Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: 'OrderDetails'
     },
     productId: {
         type: Schema.Types.ObjectId,
@@ -18,11 +15,10 @@ export const cartSchema = new Schema({
     },
     quantity: {
         type: Number,
-        requird: true,
+        required: true,
         default: 1
     }
 });
 
 
-export const CartModel = mongoose.model('Cart', cartSchema);
-
+export const OrderItemModel = mongoose.model('OrderItem', orderItemSchema);
